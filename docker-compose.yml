@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  webserver:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    container_name: 'webserver'
+    restart: 'always'
+    ports:
+      - "4040:80"
+    volumes: 
+      - /sftp/logs:/usr/local/apache2/htdocs
